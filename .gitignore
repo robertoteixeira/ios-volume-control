@@ -1,0 +1,41 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+*.xcworkspace
+*.xcuserdata
+
+# Xcode user data (personal settings)
+*.xcuserdatad/
+*.xcuserdata/
+
+# Swift Package Manager
+Packages/
+.swiftpm/
+.build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# Xcode Archive
+*.xcarchive
+
+# Environment files
+.env
+
+# Other settings
+*.swp
+*.lock
+.idea/
+.vscode/
