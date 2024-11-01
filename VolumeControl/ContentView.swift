@@ -57,7 +57,7 @@ struct ContentView: View {
                 Spacer()
                 
                 VStack(spacing: 10) {
-                    Text("Current progress:  \(Int(progress * 100))%")
+                    Text("Current progress: \(String(format: "%.1f", progress * 100))%")
                     
                     Button("Update Progress") {
                         progress = 1.0

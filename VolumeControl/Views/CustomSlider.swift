@@ -13,6 +13,7 @@ struct CustomSlider: View {
     var orientation: SliderOrientation
     var color: Color
     var style: SliderStyle = .continuous
+    var barCount: Int = 20
     
     @State private var progress: CGFloat = .zero
     @State private var dragOffset: CGFloat = .zero
@@ -42,25 +43,25 @@ struct CustomSlider: View {
                     // Bar style
                     if orientation == .horizontal {
                         HStack(spacing: 2) {
-                            ForEach(0..<10, id: \.self) { index in
-                                let barThreshold = CGFloat(index) / 10
-                                let isFilled = index == 9 ? progress == 1.0 : progress > barThreshold
+                            ForEach(0..<barCount, id: \.self) { index in
+                                let barThreshold = CGFloat(index) / CGFloat(barCount)
+                                let isFilled = index == (barCount - 1) ? progress == 1.0 : progress > barThreshold
                                 
                                 Rectangle()
                                     .fill(isFilled ? color : Color.gray.opacity(0.3))
-                                    .frame(width: size.width / 10 - 2, height: size.height)
+                                    .frame(width: size.width / CGFloat(barCount) - 2, height: size.height)
                                     .cornerRadius(4)
                             }
                         }
                     } else {
                         VStack(spacing: 2) {
-                            ForEach((0..<10).reversed(), id: \.self) { index in
-                                let barThreshold = CGFloat(index) / 10
-                                let isFilled = index == 9 ? progress == 1.0 : progress > barThreshold
+                            ForEach((0..<barCount).reversed(), id: \.self) { index in
+                                let barThreshold = CGFloat(index) / CGFloat(barCount)
+                                let isFilled = index == (barCount - 1) ? progress == 1.0 : progress > barThreshold
                                 
                                 Rectangle()
                                     .fill(isFilled ? color : Color.gray.opacity(0.3))
-                                    .frame(width: size.width, height: size.height / 10 - 2)
+                                    .frame(width: size.width, height: size.height / CGFloat(barCount) - 2)
                                     .cornerRadius(4)
                             }
                         }
