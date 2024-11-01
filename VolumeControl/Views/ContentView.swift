@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
-    @State var progress: CGFloat = .zero
+    @State var progress: CGFloat = 0.5
+    private var audioPlayer: AVAudioPlayer?
+    
+    init() {
+        self.audioPlayer = setupAudioPlayer()
+        self.audioPlayer?.volume = Float(progress)
+        self.audioPlayer?.play()
+    }
     
     var body: some View {
         NavigationStack {
@@ -29,6 +37,9 @@ struct ContentView: View {
                         style: .bar
                     )
                     .frame(width: 60, height: 180)
+                    .onChange(of: progress) {
+                        audioPlayer?.volume = Float(progress)
+                    }
                 }
                 .padding(.top, 20)
                 
@@ -68,6 +79,24 @@ struct ContentView: View {
             .padding()
             .frame(maxWidth: .infinity, alignment: .top)
             .navigationTitle("Custom Slider")
+        }
+    }
+    
+    private func setupAudioPlayer() -> AVAudioPlayer? {
+        guard let path = Bundle.main.path(forResource: "background-music", ofType: "mp3") else {
+            print("Background music file not found")
+            return nil
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            let player = try AVAudioPlayer(contentsOf: url)
+            player.numberOfLoops = -1 // Loop indefinitely
+            return player
+        } catch {
+            print("Failed to initialize AVAudioPlayer: \(error.localizedDescription)")
+            return nil
         }
     }
 }

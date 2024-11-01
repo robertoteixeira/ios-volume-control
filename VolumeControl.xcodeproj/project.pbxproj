@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03814F4E2CD439580036A90F /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03814F4D2CD439580036A90F /* CustomSlider.swift */; };
+		03814F512CD53A260036A90F /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03814F502CD53A250036A90F /* background-music.mp3 */; };
 		03DBB02F2CD40AB500E288F4 /* VolumeControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB02E2CD40AB500E288F4 /* VolumeControlApp.swift */; };
 		03DBB0312CD40AB500E288F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB0302CD40AB500E288F4 /* ContentView.swift */; };
 		03DBB0332CD40AB600E288F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DBB0322CD40AB600E288F4 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		03814F4D2CD439580036A90F /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		03814F502CD53A250036A90F /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-music.mp3"; sourceTree = "<group>"; };
 		03DBB02B2CD40AB500E288F4 /* VolumeControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolumeControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DBB02E2CD40AB500E288F4 /* VolumeControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeControlApp.swift; sourceTree = "<group>"; };
 		03DBB0302CD40AB500E288F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,9 +85,18 @@
 		03814F4A2CD42EB00036A90F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				03DBB0302CD40AB500E288F4 /* ContentView.swift */,
 				03814F4D2CD439580036A90F /* CustomSlider.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		03814F4F2CD53A140036A90F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				03814F502CD53A250036A90F /* background-music.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		03DBB0222CD40AB500E288F4 = {
@@ -111,10 +122,10 @@
 		03DBB02D2CD40AB500E288F4 /* VolumeControl */ = {
 			isa = PBXGroup;
 			children = (
+				03814F4F2CD53A140036A90F /* Resources */,
 				03814F4A2CD42EB00036A90F /* Views */,
 				03814F492CD42EA40036A90F /* ViewModels */,
 				03DBB02E2CD40AB500E288F4 /* VolumeControlApp.swift */,
-				03DBB0302CD40AB500E288F4 /* ContentView.swift */,
 				03DBB0322CD40AB600E288F4 /* Assets.xcassets */,
 				03DBB0342CD40AB600E288F4 /* Preview Content */,
 			);
@@ -251,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03DBB0362CD40AB600E288F4 /* Preview Assets.xcassets in Resources */,
+				03814F512CD53A260036A90F /* background-music.mp3 in Resources */,
 				03DBB0332CD40AB600E288F4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
