@@ -43,10 +43,11 @@ struct CustomSlider: View {
                     if orientation == .horizontal {
                         HStack(spacing: 2) {
                             ForEach(0..<10, id: \.self) { index in
-                                let barThreshold = CGFloat(index + 1) / 10
+                                let barThreshold = CGFloat(index) / 10
+                                let isFilled = index == 9 ? progress == 1.0 : progress > barThreshold
                                 
                                 Rectangle()
-                                    .fill(progress >= barThreshold ? color : Color.gray.opacity(0.3))
+                                    .fill(isFilled ? color : Color.gray.opacity(0.3))
                                     .frame(width: size.width / 10 - 2, height: size.height)
                                     .cornerRadius(4)
                             }
@@ -54,10 +55,11 @@ struct CustomSlider: View {
                     } else {
                         VStack(spacing: 2) {
                             ForEach((0..<10).reversed(), id: \.self) { index in
-                                let barThreshold = CGFloat(index + 1) / 10
+                                let barThreshold = CGFloat(index) / 10
+                                let isFilled = index == 9 ? progress == 1.0 : progress > barThreshold
                                 
                                 Rectangle()
-                                    .fill(progress >= barThreshold ? color : Color.gray.opacity(0.3))
+                                    .fill(isFilled ? color : Color.gray.opacity(0.3))
                                     .frame(width: size.width, height: size.height / 10 - 2)
                                     .cornerRadius(4)
                             }
