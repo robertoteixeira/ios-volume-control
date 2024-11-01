@@ -22,7 +22,8 @@ An iOS app that demonstrates a customizable volume control slider with interacti
 
 ## Screenshots
 
-[Include screenshots of the app here to show off the UI and slider interactions.]
+(assets/custom-slider.gif)
+
 
 ## Requirements
 
