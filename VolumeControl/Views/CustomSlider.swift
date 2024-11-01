@@ -10,14 +10,19 @@ import SwiftUI
 struct CustomSlider: View {
     @Binding var sliderProgress: CGFloat
     
-    var orientation: SliderOrientation
-    var color: Color
+    var orientation: SliderOrientation = .vertical
+    var foregroundColor: Color = .blue
+    var backgroundColor: Color = Color.gray.opacity(0.3)
     var style: SliderStyle = .continuous
-    var barCount: Int = 20
+    var barCount: Int = 10
+    var enableHaptics: Bool = true
+    
+    private let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
     
     @State private var progress: CGFloat = .zero
     @State private var dragOffset: CGFloat = .zero
     @State private var lastDragOffset: CGFloat = .zero
+    @State private var lastHapticProgress: CGFloat = .zero
     
     var body: some View {
         GeometryReader {
@@ -29,10 +34,10 @@ struct CustomSlider: View {
                     // Continuous style
                     ZStack(alignment: orientation == .horizontal ? .leading : .bottom) {
                         Rectangle()
-                            .fill(Color.gray.opacity(0.3))
+                            .fill(backgroundColor)
                         
                         Rectangle()
-                            .fill(color)
+                            .fill(foregroundColor)
                             .frame(
                                 width: orientation == .horizontal ? progress * orientationSize : nil,
                                 height: orientation == .vertical ? progress * orientationSize : nil
@@ -48,7 +53,7 @@ struct CustomSlider: View {
                                 let isFilled = index == (barCount - 1) ? progress == 1.0 : progress > barThreshold
                                 
                                 Rectangle()
-                                    .fill(isFilled ? color : Color.gray.opacity(0.3))
+                                    .fill(isFilled ? foregroundColor : backgroundColor)
                                     .frame(width: size.width / CGFloat(barCount) - 2, height: size.height)
                                     .cornerRadius(4)
                             }
@@ -60,7 +65,7 @@ struct CustomSlider: View {
                                 let isFilled = index == (barCount - 1) ? progress == 1.0 : progress > barThreshold
                                 
                                 Rectangle()
-                                    .fill(isFilled ? color : Color.gray.opacity(0.3))
+                                    .fill(isFilled ? foregroundColor : backgroundColor)
                                     .frame(width: size.width, height: size.height / CGFloat(barCount) - 2)
                                     .cornerRadius(4)
                             }
@@ -75,6 +80,15 @@ struct CustomSlider: View {
                         let movement = (orientation == .horizontal ? translation.width : -translation.height) + lastDragOffset
                         dragOffset = max(0, min(movement, orientationSize))
                         calculateProgress(orientationSize: orientationSize)
+                        
+                        if enableHaptics {
+                            let progressStep = 1.0 / CGFloat(barCount)
+                            let roundedProgress = round(progress / progressStep) * progressStep
+                            if roundedProgress != lastHapticProgress {
+                                feedbackGenerator.impactOccurred()
+                                lastHapticProgress = roundedProgress
+                            }
+                        }
                     }
                     .onEnded { _ in
                         withAnimation(.smooth) {
@@ -98,6 +112,11 @@ struct CustomSlider: View {
             }
             .onChange(of: orientation) { oldValue, newValue in
                 sliderProgress = max(min(progress, 1.0), .zero)
+            }
+        }
+        .onAppear {
+            if enableHaptics {
+                feedbackGenerator.prepare()
             }
         }
         .onChange(of: progress) { oldValue, newValue in

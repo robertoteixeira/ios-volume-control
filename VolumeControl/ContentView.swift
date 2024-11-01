@@ -17,7 +17,7 @@ struct ContentView: View {
                     CustomSlider(
                         sliderProgress: $progress,
                         orientation: .vertical,
-                        color: .blue,
+                        foregroundColor: .blue,
                         style: .continuous
                     )
                     .frame(width: 60, height: 180)
@@ -25,7 +25,7 @@ struct ContentView: View {
                     CustomSlider(
                         sliderProgress: $progress,
                         orientation: .vertical,
-                        color: .red,
+                        foregroundColor: .red,
                         style: .bar
                     )
                     .frame(width: 60, height: 180)
@@ -38,7 +38,7 @@ struct ContentView: View {
                     CustomSlider(
                         sliderProgress: $progress,
                         orientation: .horizontal,
-                        color: .blue,
+                        foregroundColor: .blue,
                         style: .continuous
                     )
                     .frame(width: 220, height: 30)
@@ -47,7 +47,7 @@ struct ContentView: View {
                     CustomSlider(
                         sliderProgress: $progress,
                         orientation: .horizontal,
-                        color: .red,
+                        foregroundColor: .red,
                         style: .bar
                     )
                     .frame(width: 220, height: 30)
