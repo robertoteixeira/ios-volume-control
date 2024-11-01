@@ -72,12 +72,12 @@ struct ContentView: View {
                         Text("Current volume: \(String(format: "%.1f", viewModel.sliderProgress * 100))%")
                         
                         HStack {
-                            TextField("Progress (0 to 100)", text: $viewModel.inputProgress)
+                            TextField("Volume (0 to 100)", text: $viewModel.inputProgress)
                                 .keyboardType(.numberPad)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .frame(width: 100)
                             
-                            Button("Set Progress") {
+                            Button("Set Volume") {
                                 viewModel.setVolume()
                             }
                         }

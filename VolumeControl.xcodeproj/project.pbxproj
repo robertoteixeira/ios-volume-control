@@ -11,13 +11,12 @@
 		03814F512CD53A260036A90F /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03814F502CD53A250036A90F /* background-music.mp3 */; };
 		03814F532CD561EB0036A90F /* VolumeControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03814F522CD561EB0036A90F /* VolumeControlViewModel.swift */; };
 		03814F562CD565D70036A90F /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03814F552CD565D70036A90F /* UIApplication+Extensions.swift */; };
+		03814F582CD57A6E0036A90F /* VolumeControlViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03814F572CD57A6E0036A90F /* VolumeControlViewModelTests.swift */; };
 		03DBB02F2CD40AB500E288F4 /* VolumeControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB02E2CD40AB500E288F4 /* VolumeControlApp.swift */; };
 		03DBB0312CD40AB500E288F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB0302CD40AB500E288F4 /* ContentView.swift */; };
 		03DBB0332CD40AB600E288F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DBB0322CD40AB600E288F4 /* Assets.xcassets */; };
 		03DBB0362CD40AB600E288F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DBB0352CD40AB600E288F4 /* Preview Assets.xcassets */; };
-		03DBB0402CD40AB600E288F4 /* VolumeControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB03F2CD40AB600E288F4 /* VolumeControlTests.swift */; };
 		03DBB04A2CD40AB600E288F4 /* VolumeControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB0492CD40AB600E288F4 /* VolumeControlUITests.swift */; };
-		03DBB04C2CD40AB600E288F4 /* VolumeControlUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DBB04B2CD40AB600E288F4 /* VolumeControlUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,16 +41,15 @@
 		03814F502CD53A250036A90F /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-music.mp3"; sourceTree = "<group>"; };
 		03814F522CD561EB0036A90F /* VolumeControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeControlViewModel.swift; sourceTree = "<group>"; };
 		03814F552CD565D70036A90F /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		03814F572CD57A6E0036A90F /* VolumeControlViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeControlViewModelTests.swift; sourceTree = "<group>"; };
 		03DBB02B2CD40AB500E288F4 /* VolumeControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolumeControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DBB02E2CD40AB500E288F4 /* VolumeControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeControlApp.swift; sourceTree = "<group>"; };
 		03DBB0302CD40AB500E288F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		03DBB0322CD40AB600E288F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03DBB0352CD40AB600E288F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		03DBB03B2CD40AB600E288F4 /* VolumeControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolumeControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03DBB03F2CD40AB600E288F4 /* VolumeControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeControlTests.swift; sourceTree = "<group>"; };
 		03DBB0452CD40AB600E288F4 /* VolumeControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolumeControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DBB0492CD40AB600E288F4 /* VolumeControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeControlUITests.swift; sourceTree = "<group>"; };
-		03DBB04B2CD40AB600E288F4 /* VolumeControlUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeControlUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +155,7 @@
 		03DBB03E2CD40AB600E288F4 /* VolumeControlTests */ = {
 			isa = PBXGroup;
 			children = (
-				03DBB03F2CD40AB600E288F4 /* VolumeControlTests.swift */,
+				03814F572CD57A6E0036A90F /* VolumeControlViewModelTests.swift */,
 			);
 			path = VolumeControlTests;
 			sourceTree = "<group>";
@@ -166,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				03DBB0492CD40AB600E288F4 /* VolumeControlUITests.swift */,
-				03DBB04B2CD40AB600E288F4 /* VolumeControlUITestsLaunchTests.swift */,
 			);
 			path = VolumeControlUITests;
 			sourceTree = "<group>";
@@ -314,7 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DBB0402CD40AB600E288F4 /* VolumeControlTests.swift in Sources */,
+				03814F582CD57A6E0036A90F /* VolumeControlViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +319,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DBB04C2CD40AB600E288F4 /* VolumeControlUITestsLaunchTests.swift in Sources */,
 				03DBB04A2CD40AB600E288F4 /* VolumeControlUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +523,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V2SK48XXC3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
@@ -546,6 +543,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V2SK48XXC3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
@@ -564,6 +562,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V2SK48XXC3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rteixeira.VolumeControlUITests;
@@ -581,6 +580,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V2SK48XXC3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rteixeira.VolumeControlUITests;
